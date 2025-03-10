@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
 import { DashboardLinks } from "../components/DashboardLink";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, User2 } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -60,6 +60,10 @@ const data = await getUser(session.user?.id as string);
                             </Button>
                         </SheetTrigger> 
                         <SheetContent side="left">
+                            <SheetHeader>
+                                <SheetTitle className="sr-only">Menu</SheetTitle>
+                                <SheetDescription className="sr-only">Deskripsi opsional</SheetDescription> 
+                            </SheetHeader>
                             <nav className="grid gap-2 mt-10">
                                 <DashboardLinks/>
                             </nav>    
